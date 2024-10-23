@@ -1,0 +1,12 @@
+module MOD_COMMISSION;
+process init()
+end_process
+process commission(a:nat,b:nat,c:nat)q:real
+aux ()
+ext
+pre a > 0 and b > 0 and c > 0
+post (a*45+b*30+c*25 <= 1000 and q = (a*45+b*30+c*25)*0.1) or 
+(a*45+b*30+c*25 > 1000 and a*45+b*30+c*25 <= 1800 and q = 100+((a*45+b*30+c*25)-1000)*0.15) or 
+(a*45+b*30+c*25 > 1800 and q = 220+((a*45+b*30+c*25)-1800)*0.20)
+end_process
+end_module

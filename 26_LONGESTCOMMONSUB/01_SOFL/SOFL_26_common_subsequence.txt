@@ -1,0 +1,22 @@
+module SYS_COMMONSUBSEQ;
+
+process init()
+ln = 4
+aaux = []
+baux = []
+end_process
+
+process common_subsequence(a:seq of char,b:seq of char)commonseq:seq of char
+aux (k1:nat0,k2:nat0,arr1:seq of char,arr2:seq of char,arr:seq of char)
+ext
+
+pre
+
+post (len(arr1) = 0 and len(arr2) = 0 and len(arr) = 0 and a = arr1 and b = arr2 and commonseq = arr) or 
+(len(arr1) = ln and len(arr2) = ln and len(arr) = 0 and forall[i:elems(arr1)] | i notin set(arr2); and a = arr1 and b = arr2 and commonseq = arr) or 
+(k1 > 0 and k1 < ln and k2 > 0 and k2 < ln and len(arr1) = ln and len(arr2) = ln and len(arr) = ln and forall[i:elems(arr1)] | i notin set(arr2); and a = arr1[:k1] + arr + arr1[k1:] and b = arr2[:k2] + arr + arr2[k2:] and commonseq = arr)
+
+
+end_process
+
+end_module

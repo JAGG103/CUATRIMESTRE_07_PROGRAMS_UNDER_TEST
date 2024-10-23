@@ -1,0 +1,19 @@
+module SYS_DISCOUNTCOLLEGE;
+
+process init()
+end_process
+
+process discount_college(month:seq of char,college:int)total:real
+aux ()
+ext
+
+pre college > 0
+
+post (len(month)=7 and month inset {'enero  ','febrero','marzo  '} and total = college-(college*0.3)) or 
+(len(month)=5 and month inset {'abril','mayo ','junio'} and total = college-(college*0.2)) or 
+(len(month)=10 and month inset {'julio     ','agosto    ','septiembre'} and total = college-(college*0.1)) or 
+(len(month)=9 and month inset {'octubre  ','noviembre','diciembre'} and  total = college)
+
+end_process
+
+end_module

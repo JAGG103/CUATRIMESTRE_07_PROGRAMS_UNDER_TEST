@@ -1,0 +1,16 @@
+module SYS_;
+
+process init()
+end_process
+
+process bucket_sort(seqin:seq of nat0,up:nat0)seqout:seq of nat0
+aux (ln:nat)
+ext
+pre
+
+post (len(seqin) = 0 and seqout = seqin) or 
+(ln >= 1 and ln <= 6 and len(seqin) = ln and up = max(seqin)+1 and len(seqout) = ln and forall[i:inds(seqout)] | seqout[i] <= seqout[i+1]; and seqout[0] = min(seqin) and seqout[ln-1] = max(seqin) and forall[i:elems(seqin)] | i inset set(seqout) and seqin.count(i) = seqout.count(i); and forall[i:elems(seqout)] | i inset set(seqin) and seqout.count(i) = seqin.count(i);)
+
+end_process
+
+end_module

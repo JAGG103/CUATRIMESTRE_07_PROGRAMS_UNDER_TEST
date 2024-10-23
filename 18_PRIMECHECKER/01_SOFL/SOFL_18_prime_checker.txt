@@ -1,0 +1,18 @@
+module SYS_PRIMECHECK;
+
+process init()
+end_process
+
+process prime_checker(num:int)out:bool
+aux ()
+ext
+pre
+
+post (num <= 1 and out = False) or 
+(num = 2 and out = True) or 
+(num > 2 and forall[i: {2...num}] | num%i <> 0; and out = True) or 
+(num > 2 and exists[i: {2...num}] | num%i = 0; and out = False)
+
+end_process
+
+end_module

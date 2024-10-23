@@ -1,0 +1,18 @@
+module SYS_FFIS;
+
+process init()
+indaux = -1
+maxlenght = 15
+end_process
+
+process find_first_in_sorted(arr:seq of nat0,x:nat0)ind:int
+aux (ln:nat)
+ext
+pre
+
+post (ln >= 1 and ln <= maxlenght and len(arr) = ln and forall[i:inds(arr)] |arr[i] <= arr[i+1]; and x notin set(arr) and ind = -1) or  
+(ln >= 1 and ln <= maxlenght and len(arr) = ln and forall[i:inds(arr)] |arr[i] <= arr[i+1]; and x inset set(arr) and forall[i:inds(arr)] | {arr[len(arr)-1-i] = x implies indaux = len(arr)-1-i}; and ind = indaux)
+
+end_process
+
+end_module

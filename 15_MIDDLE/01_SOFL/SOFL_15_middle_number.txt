@@ -1,0 +1,21 @@
+module SYS_MIDDLENUMBER;
+
+process init()
+end_process
+
+process middle_number(x:int,y:int,z:int)middle:int
+aux ()
+ext
+
+pre x <> y and y <> z and z <> x
+
+post (x < y and y < z and middle = y) or 
+(z < y and y < x and middle = y) or 
+(y < x and x < z and middle = x) or 
+(z < x and x < y and middle = x) or 
+(x < z and z < y and middle = z) or 
+(y < z and z < x and middle = z)
+
+end_process
+
+end_module

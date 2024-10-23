@@ -1,0 +1,13 @@
+module SYS_TEMPERATURECAL;
+
+process init()
+end_process
+
+process temperature_converter(T:real,KoF:char)C:real
+aux ()
+ext
+pre
+post (T >= 0 and KoF = 'K' and C = T-273.15) or (T >= -459.67 and KoF = 'F' and C = (T-32)*5/9)
+end_process
+
+end_module

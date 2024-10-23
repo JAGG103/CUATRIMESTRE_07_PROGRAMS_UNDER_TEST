@@ -1,0 +1,20 @@
+module SYS_GETPROFIT;
+
+process init()
+accum = 0
+l = 4
+end_process
+
+process get_profit(dic1:seq of char x nat0,dic2:seq of char x nat0)sum:nat0
+aux (seq11:seq of char,seq12:seq of nat0,seq21:seq of char,seq22:seq of nat0)
+ext
+pre
+
+post (len(seq11) = 0 and len(seq12)= 0 and len(seq21) = 0 and len(seq22)= 0 and dic1 = [] and dic2 = [] and sum = 0) or 
+(len(seq11) = l and len(seq12)= l and len(seq21) = l and len(seq22)= l and forall[i:elems(seq11)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and forall[i:elems(seq21)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and forall[i:elems(seq12)] | i = 0; and dic1 = list(zip(seq11,seq12)) and dic2 = list(zip(seq21,seq22)) and forall[i:elems(seq12)] | {i >= 0 implies accum = accum + i}; and forall[i:elems(seq22)] | {i >= 0 implies accum = accum + i}; and sum = accum) or 
+(len(seq11) = l and len(seq12)= l and len(seq21) = l and len(seq22)= l and forall[i:elems(seq11)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and forall[i:elems(seq21)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and forall[i:elems(seq22)] | i = 0; and dic1 = list(zip(seq11,seq12)) and dic2 = list(zip(seq21,seq22)) and forall[i:elems(seq12)] | {i >= 0 implies accum = accum + i}; and forall[i:elems(seq22)] | {i >= 0 implies accum = accum + i}; and sum = accum) or 
+(len(seq11) = l and len(seq12)= l and len(seq21) = l and len(seq22)= l and forall[i:elems(seq11)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and forall[i:elems(seq21)] | i inset set(['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']); and dic1 = list(zip(seq11,seq12)) and dic2 = list(zip(seq21,seq22)) and forall[i:elems(seq12)] | {i >= 0 implies accum = accum + i}; and forall[i:elems(seq22)] | {i >= 0 implies accum = accum + i}; and sum = accum)
+
+end_process
+
+end_module

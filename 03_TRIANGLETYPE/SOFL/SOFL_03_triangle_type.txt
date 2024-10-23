@@ -1,0 +1,21 @@
+module SYS_TRIANGLETYPE;
+
+process init()
+end_process
+
+process triangle_type(a:nat0,b:nat0,c:nat0)q:seq of char
+aux ()
+ext
+pre
+
+post (a<b+c and b<a+c and c<a+b and a=c and c=b and q="Equilatero") or 
+(a<b+c and b<a+c and c<a+b and a=b and b<>c and q="Isosceles") or 
+(a<b+c and b<a+c and c<a+b and a=c and c<>b and q="Isosceles") or 
+(a<b+c and b<a+c and c<a+b and c=b and b<>a and q="Isosceles") or 
+(a<b+c and b<a+c and c<a+b and a<>b and b<>c and c<>a and q="Escaleno") or 
+(a>=b+c and q="NonTriangle") or (b>=a+c and q="NonTriangle") or 
+(c>=b+a and q="NonTriangle")
+
+end_process
+
+end_module

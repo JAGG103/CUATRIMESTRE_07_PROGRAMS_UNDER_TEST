@@ -1,0 +1,22 @@
+module SYS_PURCHASETICKET;
+
+process init()
+end_process
+
+process purchase_ticket(status:seq of char,fare:nat0)actual_fare:int
+aux ()
+
+ext wr buffer:nat0
+
+pre fare*0.5 <= _buffer and fare%10 = 0
+
+post (status = 'Infant' and actual_fare = 0 and buffer = _buffer) or 
+(status = 'Student' and actual_fare = fare - fare*0.5 and buffer = _buffer-actual_fare) or 
+(status = 'Normal' and actual_fare = fare and buffer = _buffer-actual_fare) or 
+(status = 'Pensioner' and actual_fare = fare - fare*0.3 and buffer = _buffer-actual_fare) or 
+(status = 'Disable' and actual_fare = fare - fare*0.3 and buffer = _buffer-actual_fare) or 
+(status = 'Default' and actual_fare = -1 and buffer = _buffer)
+
+end_process
+
+end_module

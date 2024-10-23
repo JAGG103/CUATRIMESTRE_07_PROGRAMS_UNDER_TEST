@@ -1,0 +1,21 @@
+module SYS_BITCOUNT;
+
+process init()
+c = 0
+ln = 10
+cnt = 0
+end_process
+
+process bit_count(n:nat0)count:nat0
+aux (sb:seq of nat0,a:nat0)
+ext
+pre
+
+post (len(sb) = 1 and forall[i: elems(sb)] | i = 0; and n = 0 and count = 0) or 
+(a >= 0 and len(sb) = 0 and n = 2**a and count = 1) or 
+(a > 0 and len(sb) = 0 and n = (2**a)-1 and count = a) or 
+(len(sb) = ln and forall[i: elems(sb)] | i = 1 or i = 0; and forall[i: inds(sb)] | {sb[i] = 1 implies c = c + (2**(len(sb)-1-i))}; and forall[i: elems(sb)] | {i = 1 implies cnt = cnt + 1}; and n = c and count = cnt)
+
+end_process
+
+end_module

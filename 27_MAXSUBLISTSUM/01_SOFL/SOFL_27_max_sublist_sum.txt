@@ -1,0 +1,19 @@
+module SYS_MAXSUBLSSUM;
+
+process init()
+max_ending = 0
+max_so_far = 0
+end_process
+
+process max_sublist_sum(arr:seq of int)sum:int
+aux (ln:nat)
+ext
+
+pre
+
+post (ln = 0 and len(arr) = ln and sum = max_so_far) or 
+(ln >=1 and ln <= 8 and len(arr) = ln and forall[i:elems(arr)]| {1=1 implies max_ending = max(0, max_ending+i)} and {1=1 implies max_so_far = max(max_so_far, max_ending)}; and sum = max_so_far)
+
+end_process
+
+end_module

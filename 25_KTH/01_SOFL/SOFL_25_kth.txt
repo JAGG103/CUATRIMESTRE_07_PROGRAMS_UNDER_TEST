@@ -1,0 +1,17 @@
+module SYS_KTH;
+
+process init()
+maxlen = 6
+end_process
+
+process kth(arr:seq of nat0,k:nat0)e:nat0
+aux (ln:nat)arr2:seq of nat0
+ext
+
+pre
+
+post (ln >= 1 and ln <= maxlen and len(arr) = ln and k >= 0 and k < ln and len(arr2) = ln and forall[i:inds(arr2)] | arr2[i] <= arr2[i+1]; and forall[i:elems(arr2)] | i inset set(arr); and forall[i:elems(arr2)] | arr2.count(i) = arr.count(i); and e = arr2[k])
+
+end_process
+
+end_module

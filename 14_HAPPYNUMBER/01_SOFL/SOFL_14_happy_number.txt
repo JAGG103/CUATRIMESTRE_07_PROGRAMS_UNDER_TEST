@@ -1,0 +1,18 @@
+module SYS_HAPPYNUMBER;
+
+process init()
+end_process
+
+process happy_number(number:nat)ishappy:nat0
+aux ()
+ext
+pre
+
+post (number inset {1,7} and ishappy = 1) or 
+(number inset {10,13,19,23,28,31,32,44,49,68,70,79,82,86,91,94,97} and ishappy = 1) or 
+(number notin {1,7} and number < 10 and ishappy = 0) or 
+(number notin {10,13,19,23,28,31,32,44,49,68,70,79,82,86,91,94,97} and number > 9 and number < 100 and ishappy = 0)
+
+end_process
+
+end_module

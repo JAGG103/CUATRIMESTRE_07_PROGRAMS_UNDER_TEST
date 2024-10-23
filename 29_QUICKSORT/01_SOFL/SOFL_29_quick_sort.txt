@@ -1,0 +1,15 @@
+module SYS_QUICKSORT;
+
+process init()
+end_process
+
+process quick_sort(arr:seq of nat0)arrsorted:seq of nat0
+aux (ln:nat)
+ext
+
+post (len(arr) = 0 and arrsorted = arr) or 
+(ln >= 1 and ln <= 8 and len(arr) = ln and len(arrsorted) = ln and forall[i:inds(arrsorted)] | arrsorted[i] <= arrsorted[i+1]; and arrsorted[0] = min(arr) and arrsorted[ln-1] = max(arr) and forall[i:elems(arr)] | i inset set(arrsorted) and arr.count(i) = arrsorted.count(i); and forall[i:elems(arrsorted)] | i inset set(arr) and arr.count(i) = arrsorted.count(i);)
+
+end_process
+
+end_module

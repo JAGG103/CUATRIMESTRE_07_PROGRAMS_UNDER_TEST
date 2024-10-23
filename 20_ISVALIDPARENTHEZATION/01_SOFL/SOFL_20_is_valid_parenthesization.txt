@@ -1,0 +1,23 @@
+module SYS_ISVALIDPARENT;
+
+process init()
+cont = 0
+cond1 = True
+cond2 = True
+maxlenght = 6
+end_process
+
+process is_valid_parenthesization(in:seq of char)isvalid:bool
+aux (ln:nat)aux_:nat0
+ext
+pre
+
+post 
+(len(in) = 2 and in[0] inset {'('} and in[1] inset {')'} and isvalid = True) or 
+(len(in) = 2 and in[0] inset {')'} and in[1] inset {'('} and isvalid = False) or 
+(ln >= 2 and ln < maxlenght and ln%2 > 0 and len(in) = ln and forall[i:elems(in)] | i inset set(['(',')']); and isvalid = False) or 
+(ln >= 2 and ln < maxlenght and ln%2 = 0 and len(in) = ln and forall[i:elems(in)] | i inset set(['(',')']); and forall[i:elems(in)] | {i inset set(['(']) implies cont = cont + 1} or {i inset set([')']) implies cont = cont - 1} or {cont < 0 implies cond1 = False}; and aux_ = 2 and forall[i:{1...aux_}] | {cond1 = False implies cond2 = False} or {cont < 0 or cont > 0 implies cond2 = False}; and isvalid = cond2)
+
+end_process
+
+end_module

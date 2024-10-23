@@ -1,0 +1,18 @@
+module SYS_COUNTPEERS;
+
+process init()
+count = 0
+end_process
+
+process count_peers(number:int)countOut:int
+aux ()
+ext
+pre
+
+post (number <= 0 and countOut = -1) or 
+(number = 1 and countOut = 0) or 
+(number >= 2 and exists[i: {1...number+1}] | i%2 = 0; and forall[i: {1...number+1}] | {i%2 = 0 implies count = count+1}; and countOut = count)
+
+end_process
+
+end_module

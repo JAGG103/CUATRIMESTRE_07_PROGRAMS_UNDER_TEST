@@ -1,0 +1,21 @@
+module SYS_MODULAREQ;
+
+process init()
+nofs = 0
+end_process
+
+process modular_equation(A:int,B:int)nofsOut:nat0
+aux ()N:nat0,M:nat0
+ext
+pre
+
+post (A = 0 and B = 0 and nofsOut = -1) or 
+(A = B and A <> 0 and nofsOut = -1) or 
+(A = 0 and B > 0 and nofsOut = 0) or 
+(A < B and A <> 0 and nofsOut = 0) or 
+(A > B and A >= 0 and N = A-B and M = int(math.sqrt(A-B)+1) and forall[i:{1...M}] | {N%i = 0 and i > B implies nofs = nofs+1} and {N%i = 0 and N/i <> i and N/i > B implies nofs = nofs+1}; and nofsOut = nofs) or 
+(A > B and A < 0  and N = A-B and M = int(math.sqrt(A-B)+1) and forall[i:{1...M}] | {N%i = 0 and i > B implies nofs = nofs+1} and {N%i = 0 and N/i <> i and N/i > B implies nofs = nofs+1}; and nofsOut = nofs)
+
+end_process
+
+end_module

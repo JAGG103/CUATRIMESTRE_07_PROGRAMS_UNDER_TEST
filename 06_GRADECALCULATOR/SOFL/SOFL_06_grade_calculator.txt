@@ -1,0 +1,20 @@
+module SYS_GRADECALCULATOR;
+
+process init()
+end_process
+
+process grade_calculator(score:nat0)grade:char
+aux ()
+ext
+
+pre score <= 100
+
+post (score >= 90 and grade = "A") or 
+(score >= 80 and score < 90 and grade = "B") or 
+(score >= 70 and score < 80 and grade = "C") or 
+(score >= 60 and score < 70 and grade = "D") or 
+(score < 60 and grade = "F")
+
+end_process
+
+end_module

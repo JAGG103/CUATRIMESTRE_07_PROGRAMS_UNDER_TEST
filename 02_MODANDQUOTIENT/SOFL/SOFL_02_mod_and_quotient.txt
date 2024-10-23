@@ -1,0 +1,16 @@
+module MOD_AND_QUOTIENT;
+process init()
+end_process
+process mod_and_quotient(x:nat0,y:nat)r:nat0,q:nat0
+aux ()
+ext
+
+pre y>0
+
+post (x=0 and q=0 and r=0) or 
+(x>=1 and y>x and q=0 and r=x) or 
+(x>=1 and y=1 and q=x and r=0) or 
+(x>y and x=(y*q)+r and r<abs(y))
+
+end_process
+end_module
