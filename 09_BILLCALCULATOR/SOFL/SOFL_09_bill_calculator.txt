@@ -7,9 +7,9 @@ process bill_calculator(account:real,percentage:nat0)total:real
 aux ()
 ext
 
-pre account >= 0
-
-post (account >= 0 and percentage >= 0 and total = (account*percentage/100)+account)
+post (account >= 0 and percentage >= 0 and total = (account*percentage/100)+account) or
+(account >= 0 and percentage < 0 and total = account)
+(account < 0 and total = -1) or 
 
 end_process
 
