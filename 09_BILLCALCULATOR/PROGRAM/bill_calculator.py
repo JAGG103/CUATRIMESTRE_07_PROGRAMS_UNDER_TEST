@@ -10,13 +10,7 @@ def bill_calculator(cuenta:float, porcentaje:int):
     elif(cuenta < 0):
         total = -1
     else:
-        total = total
+        total = cuenta
 
     return total
 
-
-
-# if(__name__=="__main__"):
-#     print(tip_calculator(7000, -1))
-#     print(tip_calculator(7000, 200))
-#     print(tip_calculator(700, 10))

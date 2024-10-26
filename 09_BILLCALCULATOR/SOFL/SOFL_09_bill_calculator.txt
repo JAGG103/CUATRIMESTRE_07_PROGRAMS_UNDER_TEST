@@ -3,13 +3,14 @@ module SYS_BILLCALCULATOR;
 process init()
 end_process
 
-process bill_calculator(account:real,percentage:nat0)total:real
+process bill_calculator(account:real,percentage:int)total:real
 aux ()
 ext
+pre
 
-post (account >= 0 and percentage >= 0 and total = (account*percentage/100)+account) or
-(account >= 0 and percentage < 0 and total = account)
-(account < 0 and total = -1) or 
+post (account >= 0 and percentage >= 0 and total = (account*percentage/100)+account) or 
+(account >= 0 and percentage < 0 and total = account) or 
+(account < 0 and total = -1)
 
 end_process
 
