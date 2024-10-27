@@ -7,10 +7,10 @@ def bill_calculator(cuenta:float, porcentaje:int):
     if(cuenta >= 0 and porcentaje >= 0):
         propina = (cuenta*porcentaje)/100
         total = cuenta + propina
-    elif(cuenta < 0):
-        total = -1
-    else:
+    elif(cuenta >= 0 and porcentaje < 0):
         total = cuenta
+    else:
+        total = -1
 
     return total
 
