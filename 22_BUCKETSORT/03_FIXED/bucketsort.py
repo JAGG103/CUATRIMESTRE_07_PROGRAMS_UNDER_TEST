@@ -26,5 +26,5 @@ Output:
     The elements of arr in sorted order
 """
 
-if __name__ == "__main__":
-    print(bucketsort([4,3,2,1],5))
+# if __name__ == "__main__":
+#     print(bucketsort([4,3,2,1],5))

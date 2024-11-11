@@ -9,9 +9,9 @@ def max_sublist_sum(arr):
 
     return max_so_far
 
-if __name__ == "__main__":
-    r = max_sublist_sum([-16])
-    print(r)
+# if __name__ == "__main__":
+#     r = max_sublist_sum([-16])
+#     print(r)
 
 """
 Max Sublist Sum

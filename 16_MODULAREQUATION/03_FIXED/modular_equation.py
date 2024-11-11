@@ -67,6 +67,6 @@ def modular_equation(A, B):
     return noOfSolutions
 
 
-if __name__ == "__main__":
-    r = modular_equation(-165,-185)
-    print(r)
+# if __name__ == "__main__":
+#     r = modular_equation(-165,-185)
+#     print(r)

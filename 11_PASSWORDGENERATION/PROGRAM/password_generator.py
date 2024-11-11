@@ -25,14 +25,9 @@ def password_generator(config:list[int,int,int,int,int], longitud:int):
     contrasenia = "".join(contrasenia)
     return  contrasenia
 
-    
+# if (__name__ == "__main__"):
+#     c = password_generator([1,1,1,1,1],6)
+#     print(c)
 
-
-
-
-if (__name__ == "__main__"):
-    c = password_generator([1,1,1,1,1],6)
-    print(c)
-
-    c = password_generator([1,0,0,0,0],6)
-    print(c)
+#     c = password_generator([1,0,0,0,0],6)
+#     print(c)

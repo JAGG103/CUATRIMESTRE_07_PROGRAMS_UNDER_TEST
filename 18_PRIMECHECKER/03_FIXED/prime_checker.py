@@ -48,7 +48,7 @@ def PrimeChecker(a) -> bool:
     else:  
         return False
     
-if(__name__ == "__main__"):
-    print(PrimeChecker(223))
-    print(PrimeChecker(98))
+# if(__name__ == "__main__"):
+#     print(PrimeChecker(223))
+#     print(PrimeChecker(98))
 

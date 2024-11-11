@@ -54,7 +54,7 @@ def consecutive_zeroes(N, K):
         return ("No")
 
 
-if(__name__ == "__main__"):
-    print(consecutive_zeroes(24,2))
-    print(consecutive_zeroes(23,2))
+# if(__name__ == "__main__"):
+#     print(consecutive_zeroes(24,2))
+#     print(consecutive_zeroes(23,2))
 

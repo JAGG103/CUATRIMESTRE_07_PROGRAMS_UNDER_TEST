@@ -31,5 +31,5 @@ Examples:
     False
 """
 
-if __name__ == "__main__":
-    print(is_valid_parenthesization('(()(('))
+# if __name__ == "__main__":
+#     print(is_valid_parenthesization('(()(('))
